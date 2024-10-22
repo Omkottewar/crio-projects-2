@@ -63,7 +63,7 @@ function App() {
       <div className="flex justify-center gap-10 mt-10">
         <button
           onClick={() => selectPageHandler(page - 1)}
-          disabled={page === 1}
+          // disabled={page === 1}
           className="bg-[#009879] rounded-lg text-white  px-3 py-1 border"
         >
           Previous
