@@ -23,7 +23,7 @@ function App() {
         <div className="App">
           <form onSubmit={handleSubmit}>
             <div className="input-group">
-              <label htmlFor="username">UserName: </label>
+              <label htmlFor="username">Username : </label>
               <input
                 onChange={(e) => setName(e.target.value)}
                 type="text"
