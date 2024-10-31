@@ -1,16 +1,20 @@
 import { useState } from "react";
 import "./App.css";
+import Status from "./Status";
 
 function App() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [showLogin, setShowLogin] = useState(false);
-
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    if(name==="user" && password === "password"){
+    if (name === "user" && password === "password") {
       setShowLogin(true);
+      setErrorMessage(""); 
+    } else {
+      setErrorMessage("Invalid username or password");
     }
   }
 
@@ -18,9 +22,10 @@ function App() {
     <>
       <h1>Login Page</h1>
       { showLogin ? (
-        <p>Welcome, user!</p>
+        <Status text="Welcome, user!" />
       ) : (
         <div className="App">
+          {errorMessage && <p className="error">{errorMessage}</p>}
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label htmlFor="username">Username : </label>
@@ -48,7 +53,6 @@ function App() {
       )}
     </>
   );
-  
 }
 
 export default App;
