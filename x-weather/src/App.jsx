@@ -28,7 +28,7 @@ const CitySearch = ({ onCitySelect }) => {
 };
 
 const WeatherInfoCard = ({ label, value }) => (
-  <div className="p-4 bg-gray-100 rounded-lg shadow-md text-center mb-4">
+  <div className= "  weather-card p-4 bg-gray-100 rounded-lg shadow-md text-center mb-4">
     <h3 className="text-lg font-semibold text-gray-700">{label}</h3>
     <p className="text-xl font-medium text-gray-900">{value}</p>
   </div>
@@ -61,7 +61,7 @@ const WeatherDetails = ({ selectedCity }) => {
     <div className="flex flex-col items-center">
       {isLoading && <p className="text-gray-500">Loading data...</p>}
       {!isLoading && weatherInfo && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
+        <div className=" weather-cards grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
           <WeatherInfoCard label="Temperature" value={`${weatherInfo.current.temp_c}°C`} />
           <WeatherInfoCard label="Humidity" value={`${weatherInfo.current.humidity}%`} />
           <WeatherInfoCard label="Condition" value={weatherInfo.current.condition.text} />
